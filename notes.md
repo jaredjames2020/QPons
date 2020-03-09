@@ -57,3 +57,19 @@ Write a README.md.
 Submit a video of how a user would interact with your working web application.
 Write a blog post about the project and process.
 When done, submit your GitHub repo's url, a link to your video demo, and a link to your blog post in the corresponding text boxes in the right rail. Hit "I'm done" to wrap it up.
+
+
+
+todo:
+#users
+##models
+
+##views
+index
+create
+
+##controllers
+index
+
+##routes
+get '/users', to: 'users#index'
