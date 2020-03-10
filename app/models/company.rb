@@ -1,4 +1,4 @@
 class Company < ApplicationRecord
-  has_many :offers, through: :paths
-  belongs_to :paths
+  has_many :paths, through: :offers
+  has_many :offers
 end

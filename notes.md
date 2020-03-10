@@ -67,9 +67,12 @@ todo:
 ##views
 index
 create
+new
 
 ##controllers
 index
 
 ##routes
 get '/users', to: 'users#index'
+get '/users/new', to: 'users#new'
+post '/users', to: 'users#create'
