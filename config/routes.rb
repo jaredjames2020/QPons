@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:new, :create, :index, :show]
   resources :offers, only: [:new, :create, :index]
-  resources :travels, only: [:new, :create, :index]
+  resources :travels, only: [:new, :create, :index, :show]
 
 end
