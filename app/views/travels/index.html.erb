@@ -1,0 +1,7 @@
+<h2> List of all travels </h2>
+
+  <%@travels.each.with_index(1) do |travel, index|%>
+    <h3><%= "#{index}. " %><%= link_to travel.name, travels_path(travel) %></h3>
+  <% end %>
+
+<%= link_to "Add a new travel", new_travel_path %>
