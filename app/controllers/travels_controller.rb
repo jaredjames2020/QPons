@@ -1,4 +1,4 @@
-class PathsController < ApplicationController
+class TravelsController < ApplicationController
 
   def new
   end

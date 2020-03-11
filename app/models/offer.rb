@@ -1,4 +1,4 @@
 class Offer < ApplicationRecord
   belongs_to :company
-  belongs_to :path
+  belongs_to :travel
 end

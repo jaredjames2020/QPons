@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_011914) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "paths", force: :cascade do |t|
+  create_table "travels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
