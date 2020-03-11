@@ -1,0 +1,4 @@
+<h2> List of all companies </h2>
+<%@companies.each.with_index(1) do |company, index|%>
+<h3><%= "#{index}. " %><%= company.name %></h3>
+<% end %>

@@ -1,0 +1,14 @@
+<h2> Enter a new company </h2>
+
+<%= form_for @company do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %><br>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %><br>
+
+  <%= f.submit %>
+<% end %>
