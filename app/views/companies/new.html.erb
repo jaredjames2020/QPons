@@ -1,8 +1,7 @@
 <h2> Enter a new company </h2>
 
-<% @company.errors.full_messages.each do |error| %>
-  <h4><i><%= error %></i></h4>
-  <% end %>
+<%= render partial: '/errors', locals: { record: @company } %>
+
 
 <%= form_for @company do |f| %>
   <%= f.label :name %>
