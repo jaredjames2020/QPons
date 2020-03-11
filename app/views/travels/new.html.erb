@@ -1,0 +1,11 @@
+<h2> Enter a new travel </h2>
+
+<%= render partial: '/errors', locals: { record: @travel } %>
+
+
+<%= form_for @travel do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.submit %>
+<% end %>
