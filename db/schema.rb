@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_011914) do
 
   create_table "offers", force: :cascade do |t|
     t.integer "company_id"
-    t.integer "path_id"
+    t.integer "travel_id"
     t.integer "discount"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
