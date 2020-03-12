@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :companies, only: [:new, :create, :index]
     resources :offers, only: [:new, :index, :create]
   end
+
   resources :offers, only: [:create]
   resources :companies, only: [:new, :create, :index]
+
   get '/companies/food', to: 'companies#food'
   get '/companies/technology', to: 'companies#technology'
   get '/companies/clothing', to: 'companies#clothing'
