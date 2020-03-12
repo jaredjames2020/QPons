@@ -6,3 +6,13 @@
 <%=link_to "Footwear", companies_footwear_path %>
 <%=link_to "Auto", companies_auto_path %>
 <%=link_to "Drugstore", companies_drugstore_path %>
+
+<%@companies.each.with_index(1) do |comp, index|%>
+<p><%=index%>
+<p>Name: <%=comp.name%></p>
+<p>Location: <%=comp.location%></p>
+
+<p><%comp.offers.each do |offer|%></p>
+<p>Offer: <%=offer.description%></p>
+<% end %>
+<% end %>

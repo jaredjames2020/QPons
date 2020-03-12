@@ -1,0 +1,10 @@
+<h2> List of all clothing companies </h2>
+<%@clothing.each.with_index(1) do |comp_clothing, index|%>
+<p><%=index%>
+<p>Name: <%=comp_clothing.name%></p>
+<p>Location: <%=comp_clothing.location%></p>
+
+<p><%comp_clothing.offers.each do |offer|%></p>
+<p>Offer: <%=offer.description%></p>
+<% end %>
+<% end %>
