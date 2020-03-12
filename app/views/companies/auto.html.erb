@@ -1,0 +1,9 @@
+<%@auto.each.with_index(1) do |comp_auto, index|%>
+<p><%=index%>
+<p>Name: <%=comp_auto.name%></p>
+<p>Location: <%=comp_auto.location%></p>
+
+<p><%comp_auto.offers.each do |offer|%></p>
+<p>Offer: <%=offer.description%></p>
+<% end %>
+<% end %>
