@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  belongs_to :user
   has_many :offers
   has_many :travels, through: :offers
   validates_presence_of :name, :location
