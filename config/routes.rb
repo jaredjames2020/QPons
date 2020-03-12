@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   get '/companies/footwear', to: 'companies#footwear'
   get '/companies/drugstore', to: 'companies#drugstore'
 
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+
 
 end
