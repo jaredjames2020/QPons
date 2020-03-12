@@ -3,8 +3,6 @@
 <%= render partial: '/errors', locals: { record: @offer } %>
 
 <%= form_for @offer do |f| %>
-  <%= f.label :Offer_Description %>
-  <%= f.text_field :description %><br>
 
   <%= f.fields_for :companies do |comp| %>
   Add a new company: <%= comp.text_field :name %><br>
@@ -12,6 +10,8 @@
   Category: <%= comp.text_field :category %><br>
     <% end %>
 
+    <%= f.label :Offer_Description %>
+    <%= f.text_field :description %><br>
 
   <%= f.hidden_field :travel_id, value: params[:travel_id] %>
 
