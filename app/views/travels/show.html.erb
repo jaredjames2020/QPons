@@ -1,5 +1,6 @@
 <h2><%= @travel.name %></h2>
-  <% @travel.companies.each do |company| %>
+  <% @travel.companies.each.with_index(1) do |company, index| %>
+  <h3><%=index%></h3>
   <h3>Company: <%= company.name %></h3>
   <h3>Category: <%= company.category %></h3>
     <% company.offers.each do |offer| %>
