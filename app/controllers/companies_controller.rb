@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
   def index
     get_current_travel
     @companies = Company.all
+    @food = Company.food
   end
 
   def create
@@ -19,10 +20,33 @@ class CompaniesController < ApplicationController
       end
   end
 
-  def show
-    @company = Company.find(params[:id])
+  # def show
+  #   # @company = Company.find(params[:id])
+  # end
+
+  def auto
+    @auto = Company.auto
   end
 
+  def clothing
+    @clothing = Company.clothing
+  end
+
+  def drugstore
+    @drugstore = Company.drugstore
+  end
+
+  def food
+    @food = Company.food
+  end
+
+  def footwear
+    @footwear = Company.footwear
+  end
+
+  def technology
+    @technology = Company.technology
+  end
 
   private
 
