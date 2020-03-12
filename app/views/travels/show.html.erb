@@ -1,1 +1,10 @@
 <h2><%= @travel.name %></h2>
+  <% @travel.companies.each do |company| %>
+  <h3>Company: <%= company.name %></h3>
+  <h3>Category: <%= company.category %></h3>
+    <% company.offers.each do |offer| %>
+      <p>Description: <%= offer.description %></p>
+    <%end%>
+  <% end %>
+
+  <%= link_to "Add a new offer for a company on this route", new_travel_offer_path(@travel) %>
