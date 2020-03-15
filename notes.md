@@ -3,15 +3,15 @@ Use the Ruby on Rails framework.
 
 Your models must:
 
-• Include at least one has_many, at least one belongs_to, and at least two has_many :through relationships
+X • Include at least one has_many, at least one belongs_to, and at least two has_many :through relationships
 
-• Include a many-to-many relationship implemented with has_many :through associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
+X • Include a many-to-many relationship implemented with has_many :through associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
 
-Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
+X - Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
 
-You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
+X - You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
 
-Your application must provide standard user authentication, including signup, login, logout, and passwords.
+X- Your application must provide standard user authentication, including signup, login, logout, and passwords.
 
 Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
 
@@ -76,3 +76,76 @@ index
 get '/users', to: 'users#index'
 get '/users/new', to: 'users#new'
 post '/users', to: 'users#create'
+
+<%= link_to "Add a new company", new_travel_company_path %>
+
+<%@companies.each.with_index(1) do |company, index|%>
+  <h3><%= "#{index}. " %><%= link_to company.name, company_path(company) %></h3>
+<% end %>
+
+<%= link_to "Add a new company", new_company_path %>
+
+
+  Select a company: <%= f.collection_select :company_id, Company.all, :id, :name, include_blank: true %>
+
+
+  <h2><%= @company.name %></h2>
+    <h3>Location: <%= @company.location %></h3>
+    <h3>Category: <%= @company.category %></h3>
+
+
+<h2>Route: <%= @travel.name %></h2>
+  <%= f.text_field :location, value: @travel.name %><br>
+
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :offers
+  has_many :companies
+  has_many :travels, through: :offers
+  validates_presence_of :username, :password, :password_confirmation
+  validates_uniqueness_of :username
+  has_secure_password
+
+
+------TODO------
+
+*** add dropdown menu to select category for new companies
+*** determine where to send route after company create
+*** company locations dropdown to select an available path or add a new path
+*** travel routes link shows name of actual route vs id of route
+*** travel is the main start point - click route to add company then add offers for that company
+*** only unique companies to database - validates_uniqueness_of :name
+*** assign a company to a route when offer is created
+*** fix render redirect errors on offersController
+*** add dropdown to select company categories
+
+51
+
+User
+x - go to a travel and see all routes
+x - open a route to see all company offers
+x - go to companies and see all offers
+x - sort companies by all or category
+no point of company if there is no offer
+
+
+Log-in user
+Show list of all user companies
+Add a new company
+Link to view all companies by routes
+Add offers to only your company
+check hacking and find routes just through the url bar
+
+
+Do admin first
+Admin
+Add offers
+Add travel
+Add companies
+Delete offers
+Delete travel
+Delete companies
+
+Scope method
+Companies by category
