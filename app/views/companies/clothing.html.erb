@@ -1,4 +1,12 @@
 <h2> List of all clothing companies </h2>
+<%=link_to "All", companies_path %>
+<%=link_to "Food", companies_food_path %>
+<%=link_to "Technology", companies_technology_path %>
+<%=link_to "Clothing", companies_clothing_path %>
+<%=link_to "Footwear", companies_footwear_path %>
+<%=link_to "Auto", companies_auto_path %>
+<%=link_to "Drugstore", companies_drugstore_path %>
+
 <%@clothing.each.with_index(1) do |comp_clothing, index|%>
 <p><%=index%>
 <p>Name: <%=comp_clothing.name%></p>

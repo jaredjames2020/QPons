@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+      # session[:user_id] = @user.id
+      log_in(@user)
       redirect_to travels_path
     else
       @error = "Please try again"

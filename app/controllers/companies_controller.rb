@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  #before_action :require_login
 
   def new
     get_current_travel
@@ -7,14 +8,18 @@ class CompaniesController < ApplicationController
 
   def index
     get_current_travel
-    @companies = Company.all
-    @food = Company.food
+    # @companies = Company.all
+    # @food = Company.food
+    # @user = User.find_by(id: session[:user_id])
+    @companies = current_user.companies
   end
 
   def create
-    @company = Company.new(company_params)
+    # @company = Company.new(company_params)
+    @company = current_user.companies.build(company_params)
       if @company.save
-        redirect_to travel_path(params[:travel_id])
+        # redirect_to travel_path(params[:travel_id])
+        redirect_to companies_path
       else
         render :new
       end
