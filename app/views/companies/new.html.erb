@@ -1,4 +1,4 @@
-<h2>Route: <%= @travel.name %></h2>
+#removed notes line 97
 <h2> Enter a new company </h2>
 
 <%= render partial: '/errors', locals: { record: @company } %>
@@ -9,7 +9,7 @@
   <%= f.text_field :name %><br>
 
   <%= f.label :Location %>
-  <%= f.text_field :location, value: @travel.name %><br>
+  <%= f.collection_select :location, Travel.order(:name), :id,:name, include_blank: true %><br>
 
   <%= f.label :Category %>
   <%= f.text_field :category %><br>
