@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   def welcome
   end
 
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
+  # def current_user
+  #   User.find_by(id: session[:user_id])
+  # end
 
   def require_login
     redirect_to travels_path unless logged_in?
