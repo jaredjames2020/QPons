@@ -1,19 +1,26 @@
-#removed notes line 97
-<h2> Enter a new company </h2>
+
+<h2> Enter a new company and offer </h2>
 
 <%= render partial: '/errors', locals: { record: @company } %>
 
+<%= form_for @company do |s| %>
+  <div class="form-group">
+    <%= s.label :name %>
+    <%= s.text_field :name %>
+    <%= s.label :location %>
+    <%= s.text_field :location %>
+    <%= s.label :category %>
+    <%= s.text_field :category %>
+  <!--#s.collection_select :companies, :category, @all_companies, :id, :category //-->
+  </div><br>
 
-<%= form_for [@travel, @company] do |f| %>
-  <%= f.label :Name %>
-  <%= f.text_field :name %><br>
-
-  <%= f.label :Location %>
-  <%= f.collection_select :location, Travel.order(:name), :id,:name, include_blank: true %><br>
-
-  <%= f.label :Category %>
-  <%= f.text_field :category %><br>
-
-
-  <%= f.submit %>
+  <%= s.fields_for :offers, Offer.new do |e| %>
+  <div class="form-group">
+    <%= e.label :route %>
+    <%= e.collection_select :travel_id, Travel.all, :id, :name %>
+    <%= e.label :offer_description %>
+    <%= e.text_field :description%>
+    </div><br>
+<% end %>
+<%= s.submit %>
 <% end %>
