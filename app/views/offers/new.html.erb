@@ -1,19 +1,24 @@
 <h2> Enter a new offer on Route <%= @travel.name %> </h2>
 
-<%= render partial: '/errors', locals: { record: @offer } %>
+<%= render partial: '/errors', locals: { record: @company } %>
 
-<%= form_for @offer do |f| %>
+<%= form_for @company do |s| %>
+  <div class="form-group">
+    <%= s.label :Company_name %>
+    <%= s.text_field :name %>
+    <%= s.label :location %>
+    <%= s.text_field :location %>
+    <%= s.label :category %>
+    <%= s.text_field :category %>
+  <!--#s.collection_select :companies, :category, @all_companies, :id, :category //-->
+  </div><br>
 
-  <%= f.fields_for :companies do |comp| %>
-  Add a new company: <%= comp.text_field :name %><br>
-  Location: <%= comp.text_field :location, value: @travel.name %><br>
-  Category: <%= comp.text_field :category %><br>
-    <% end %>
-
-    <%= f.label :Offer_Description %>
-    <%= f.text_field :description %><br>
-
-  <%= f.hidden_field :travel_id, value: params[:travel_id] %>
-
-  <%= f.submit %>
+  <%= s.fields_for :offers, Offer.new do |e| %>
+  <div class="form-group">
+    <%= e.label :offer_description %>
+    <%= e.text_field :description%>
+    <%= e.hidden_field :travel_id, value: @travel.id %>
+    </div><br>
+<% end %>
+<%= s.submit %>
 <% end %>
