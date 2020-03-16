@@ -1,11 +1,5 @@
-<h2> List of all auto companies </h2>
-<%=link_to "All", companies_path %>
-<%=link_to "Food", companies_food_path %>
-<%=link_to "Technology", companies_technology_path %>
-<%=link_to "Clothing", companies_clothing_path %>
-<%=link_to "Footwear", companies_footwear_path %>
-<%=link_to "Auto", companies_auto_path %>
-<%=link_to "Drugstore", companies_drugstore_path %>
+<h2> List of companies with auto offers </h2>
+<h3><%= link_to 'View all current offers', travels_path %></h3>
 
 <%@auto.each.with_index(1) do |comp_auto, index|%>
 <p><%=index%>
