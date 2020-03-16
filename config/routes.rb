@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :offers, only: [:new, :index, :create]
   end
 
-  resources :offers, only: [:create]
+  resources :offers, only: [:create, :index]
   resources :companies, only: [:new, :create, :index]
 
   get '/companies/food', to: 'companies#food'
@@ -22,11 +22,19 @@ Rails.application.routes.draw do
   get '/companies/footwear', to: 'companies#footwear'
   get '/companies/drugstore', to: 'companies#drugstore'
 
+  get '/travels/food', to: 'travels#food'
+  get '/travels/technology', to: 'travels#technology'
+  get '/travels/clothing', to: 'travels#clothing'
+  get '/travels/auto', to: 'travels#auto'
+  get '/travels/footwear', to: 'travels#footwear'
+  get '/travels/drugstore', to: 'travels#drugstore'
+  get '/travels/all', to: 'travels#all'
+
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-
 
 end
