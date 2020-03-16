@@ -1,0 +1,7 @@
+<% @offers.each.with_index(1) do |offer, index| %>
+<h3><%=index%></h3>
+<h3>Company: <%= offer.company.name %></h3>
+<h3>Category: <%= offer.company.category %></h3>
+<h3>Location: <%= offer.company.location %></h3>
+<p>Description: <%= offer.description %></p>
+<% end %>
