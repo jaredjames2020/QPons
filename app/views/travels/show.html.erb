@@ -1,4 +1,12 @@
+<h2> All current offers </h2>
+
+<% if user_signed_in? %>
+  <%= link_to "Add a new offer for a company on this route", new_travel_offer_path(@travel) %>
+<% end %>
+  <h3> <%= link_to "View offers on another route", travels_path %> </h3>
+
 <h2><%= @travel.name %></h2>
+
   <% @travel.companies.each.with_index(1) do |company, index| %>
   <h3><%=index%></h3>
   <h3>Company: <%= company.name %></h3>
@@ -7,5 +15,3 @@
       <p>Description: <%= offer.description %></p>
     <%end%>
   <% end %>
-
-  <%= link_to "Add a new offer for a company on this route", new_travel_offer_path(@travel) %>
