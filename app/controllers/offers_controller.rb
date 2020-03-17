@@ -17,17 +17,12 @@ class OffersController < ApplicationController
   end
 
   def index
-      @offers = Offer.all
-    # @offers = current_user.companies
+      # @offers = Offer.all
+      @offers = current_user.companies
   end
 
   def create
     @offer = Offer.new(offer_params)
-    # @offer.company_attributes={ name: params[:offer][:companies][:name],
-    #                             location: params[:offer][:companies][:location],
-    #                             category: params[:offer][:companies][:category]
-    #                           }
-    #                           binding.pry
       if @offer.save
         redirect_to travel_path(@offer.travel.id)
       else
@@ -55,5 +50,6 @@ class OffersController < ApplicationController
   def set_travel
     @travel = Travel.find(params[:offer][:travel_id])
   end
+
 
 end
