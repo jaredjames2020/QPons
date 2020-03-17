@@ -11,13 +11,13 @@ X - Your models must include reasonable validations for the simple attributes. Y
 
 X - You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
 
-X- Your application must provide standard user authentication, including signup, login, logout, and passwords.
+X - Your application must provide standard user authentication, including signup, login, logout, and passwords.
 
-Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
+X - Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
 
 You must include and make use of a nested resource with the appropriate RESTful URLs.
 
-• You must include a nested new route with form that relates to the parent resource
+X- • You must include a nested new route with form that relates to the parent resource
 
 • You must include a nested index or show route
 
@@ -149,3 +149,112 @@ Delete companies
 
 Scope method
 Companies by category
+
+show - user
+season - company
+episode - offer
+
+<%@companies.each.with_index(1) do |comp, index|%>
+  <p><%=index%>
+  <p>Name: <%=comp.name%></p>
+  <p>Location: <%=comp.location%></p>
+
+  <p><%comp.offers.each do |offer|%></p>
+    <p>Offer: <%=offer.description%></p>
+     <% end %>
+<% end %>
+
+NEW>HTML_COMPANIES
+<%= form_for [@travel, @company] do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :Location %>
+  <%= f.collection_select :location, Travel.order(:name), :id,:name, include_blank: true %><br>
+
+  <%= f.label :Category %>
+  <%= f.text_field :category %><br>
+
+
+  <%= f.submit %>
+<% end %>
+
+
+Add a company Name
+select company location from dropdown
+choose a category from dropdown
+
+Add offer description
+link company_id from nested
+link travel_id from dropdown
+
+save new company (name, location, category)
+save new offer (description, company_id, travel_id)
+link travel_id to offer<br><br><br>
+
+<%=link_to "All", companies_path %>
+<%=link_to "Food", companies_food_path %>
+<%=link_to "Technology", companies_technology_path %>
+<%=link_to "Clothing", companies_clothing_path %>
+<%=link_to "Footwear", companies_footwear_path %>
+<%=link_to "Auto", companies_auto_path %>
+<%=link_to "Drugstore", companies_drugstore_path %><br><br>
+<%= link_to "Add a new company and offer", new_company_path %><br><br>
+
+<h3><%=link_to "All", travels_path %>
+<%=link_to "Food", travels_food_path %>
+<%=link_to "Technology", travels_technology_path %>
+<%=link_to "Clothing", travels_clothing_path %>
+<%=link_to "Footwear", travels_footwear_path %>
+<%=link_to "Auto", travels_auto_path %>
+<%=link_to "Drugstore", travels_drugstore_path %><br><br></h3>
+
+<h2><%= @travel.name %></h2>
+
+  <% @travel.companies.each.with_index(1) do |company, index| %>
+  <h3><%=index%></h3>
+  <h3>Company: <%= company.name %></h3>
+  <h3>Category: <%= company.category %></h3>
+    <% company.offers.each do |offer| %>
+      <p>Description: <%= offer.description %></p>
+    <%end%>
+  <% end %>
+
+  <h1>All your company offers</h1>
+
+Offers#index
+  <% @offers.each do |companies| %>
+    <div><h2>Company: <%= p companies.name %></h2>
+    <% companies.offers.each do |offer| %>
+    <h3>Current offer: <%= p offer.description %></h3></div>
+    <% end %>
+    <% end %>
+
+Offer#new
+    <%= form_for @offer do |f| %>
+
+      <%= f.fields_for :company do |comp| %>
+      Add a new company: <%= comp.text_field :name %><br>
+      Location: <%= comp.text_field :location, value: @travel.name %><br>
+      Category: <%= comp.text_field :category %><br>
+        <% end %>
+
+        <%= f.label :Offer_Description %>
+        <%= f.text_field :description %><br>
+
+      <%= f.hidden_field :travel_id, value: params[:travel_id] %>
+
+
+      <%= f.submit %>
+    <% end %>
+
+
+TODO
+nested route to create new company offer
+add offers to existing company
+choose from dropdown of categories
+error messaging
+validations -
+routes filter by category and route - Q11 shows all food offers for Q11 (model after food)
+nest scope methods inside travels
+fix user ability to add new offers when signed in
