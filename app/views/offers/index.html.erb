@@ -1,12 +1,16 @@
 
-  <h2> All current offers </h2>
+  <h2> All <%=current_user.username %>'s offers </h2>
 
   <h3> <%= link_to "View offers by route or category", travels_path %> </h3>
 
-  <% @offers.each.with_index(1) do |offer, index| %>
+  <% @offers.each.with_index(1) do |comp, index| %>
   <h3><%=index%></h3>
-  <h3>Company: <%= offer.company.name %></h3>
-  <h3>Category: <%= offer.company.category %></h3>
-  <h3>Location: <%= offer.company.location %></h3>
-  <p>Description: <%= offer.description %></p>
+  <h3><%="Company: #{comp.name}" %></h3>
+  <h3><%="Category: #{comp.category}" %></h3>
+  <h3><%="Location: #{comp.location}" %></h3>
+
+    <% comp.offers.each do |offer| %>
+      <p><%="Description: #{offer.description}" %></p>
+  <% end %>
+
   <% end %>
