@@ -6,4 +6,8 @@
 <% end %>
 <h3><%= link_to 'View all current offers', travels_path %></h3><br>
 
+<% if user_signed_in? && admin %>
+  <h3><%= link_to 'Add a new travel', new_travel_path %></h3>
+<% end %>
+
 <h4>Future features for this whitespace: Offer of the day, Top offers, New companies promo, Other ad/promo</h4>
