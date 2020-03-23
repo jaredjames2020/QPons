@@ -17,8 +17,11 @@ class OffersController < ApplicationController
   end
 
   def index
-      # @offers = Offer.all
-      @offers = current_user.companies
+      if user_signed_in?
+        @offers = current_user.companies
+      else
+        @offers = Offer.all
+      end
   end
 
   def create
