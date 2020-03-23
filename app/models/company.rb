@@ -12,11 +12,4 @@ class Company < ApplicationRecord
   scope :drugstore, -> {where(category: 'Drugstore') }
 
 
-
-  def company_offers_path
-
-  end
-
-
-
 end
