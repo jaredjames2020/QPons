@@ -66,7 +66,7 @@ class OffersController < ApplicationController
   def user_route_offers
     @a = []
     current_user.companies.select(:id).each do |uuu|
-      @a << find_travel.offers.find {|o| o.company_id == uuu.id}
+      @a << find_travel.offers.select {|o| o.company_id == uuu.id}
     end
     @a
   end
