@@ -11,12 +11,12 @@
 <%= link_to 'View all current offers', travels_path %></h3>
 
 <% if user_signed_in? %>
-<%= link_to "Add a new company and offer", new_company_path %>
+  <%= link_to "Add a new company and offer", new_company_path %>
 <% end %>
 
 
 <%@companies.each.with_index(1) do |comp, index|%>
-  <p><%=index%>
+    <h2><%=index%></h2>
   <h2><%="Name: #{comp.name}"%></h2>
   <h3><%="Location: #{comp.location}"%></h3>
 
