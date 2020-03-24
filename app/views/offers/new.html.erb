@@ -1,7 +1,8 @@
 <h2> Enter a new offer on Route <%= @travel.name %> </h2>
 
-<%= render partial: '/errors', locals: { record: @company } %>
-
+<div class="field_with_errors">
+  <%= render partial: '/errors', locals: { record: @company } %>
+</div>
 <%= form_for @company do |s| %>
   <div class="form-group">
     <%= s.label :Company_name %>

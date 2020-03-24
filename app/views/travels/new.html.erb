@@ -1,6 +1,8 @@
 <h2> Enter a new travel </h2>
 
-<%= render partial: '/errors', locals: { record: @travel } %>
+<div class=field_with_errors>
+  <%= render partial: '/errors', locals: { record: @travel } %>
+</div>
 
 <%= form_for @travel do |f| %>
   <%= f.label :name %>

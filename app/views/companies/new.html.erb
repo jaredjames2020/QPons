@@ -1,7 +1,10 @@
 
 <h2> Enter a new company and offer </h2>
 
-<%= render partial: '/errors', locals: { record: @company } %>
+<div class="field_with_errors">
+  <%= render partial: '/errors', locals: { record: @company } %>
+</div>
+
 
 <%= form_for @company do |s| %>
   <div class="form-group">
