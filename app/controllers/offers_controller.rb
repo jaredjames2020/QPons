@@ -19,6 +19,8 @@ class OffersController < ApplicationController
   def index
       if user_signed_in?
         @offers = current_user.companies
+        current_user_offers
+        user_route_offers
       else
         @offers = Offer.all
       end
@@ -53,6 +55,22 @@ class OffersController < ApplicationController
   def set_travel
     @travel = Travel.find(params[:offer][:travel_id])
   end
+
+  def current_user_offers
+    current_user.companies.each do |user_offers|
+      user_offers.offers
+    end
+  end
+
+
+  def user_route_offers
+    @a = []
+    current_user.companies.select(:id).each do |uuu|
+      @a << find_travel.offers.find {|o| o.company_id == uuu.id}
+    end
+    @a
+  end
+
 
 
 end
