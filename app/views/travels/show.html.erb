@@ -4,6 +4,7 @@
   <%= link_to "Add a new offer for a company on this route", new_travel_offer_path(@travel) %>
 <% end %>
   <h3> <%= link_to "View offers on another route", travels_path %> </h3>
+  <h3> <%= link_to "View your offers on this route", travel_offers_path(@travel) %> </h3>
 
 <h2><%= @travel.name %></h2>
 
