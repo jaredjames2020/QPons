@@ -15,19 +15,23 @@ Rails.application.routes.draw do
   resources :offers, only: [:create, :index]
   resources :companies, only: [:new, :create, :index]
 
-  get '/companies/food', to: 'companies#food'
-  get '/companies/technology', to: 'companies#technology'
-  get '/companies/clothing', to: 'companies#clothing'
-  get '/companies/auto', to: 'companies#auto'
-  get '/companies/footwear', to: 'companies#footwear'
-  get '/companies/drugstore', to: 'companies#drugstore'
+  get '/companies/:category', to: 'companies#category'
+  get '/travels/:category', to: 'travels#category'
 
-  get '/travels/food', to: 'travels#food'
-  get '/travels/technology', to: 'travels#technology'
-  get '/travels/clothing', to: 'travels#clothing'
-  get '/travels/auto', to: 'travels#auto'
-  get '/travels/footwear', to: 'travels#footwear'
-  get '/travels/drugstore', to: 'travels#drugstore'
+
+  # get '/companies/food', to: 'companies#food'
+  # get '/companies/technology', to: 'companies#technology'
+  # get '/companies/clothing', to: 'companies#clothing'
+  # get '/companies/auto', to: 'companies#auto'
+  # get '/companies/footwear', to: 'companies#footwear'
+  # get '/companies/drugstore', to: 'companies#drugstore'
+
+  # get '/travels/food', to: 'travels#food'
+  # get '/travels/technology', to: 'travels#technology'
+  # get '/travels/clothing', to: 'travels#clothing'
+  # get '/travels/auto', to: 'travels#auto'
+  # get '/travels/footwear', to: 'travels#footwear'
+  # get '/travels/drugstore', to: 'travels#drugstore'
   get '/travels/all', to: 'travels#all'
 
 
