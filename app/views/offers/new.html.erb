@@ -11,14 +11,13 @@
     <%= s.text_field :location %>
     <%= s.label :category %>
     <%= s.text_field :category %>
-  <!--#s.collection_select :companies, :category, @all_companies, :id, :category //-->
   </div><br>
 
   <%= s.fields_for :offers, Offer.new do |e| %>
   <div class="form-group">
     <%= e.label :offer_description %>
     <%= e.text_field :description%>
-    <%= e.hidden_field :travel_id, value: @travel.id %>
+    <%= e.hidden_field :travel_id, value: @travel %>
     </div><br>
 <% end %>
 <%= s.submit %>
