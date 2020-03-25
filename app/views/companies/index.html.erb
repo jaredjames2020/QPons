@@ -1,12 +1,12 @@
 <h2> List of all your companies </h2>
 
 <h3><%=link_to "All", companies_path %>
-<%=link_to "Food", companies_food_path %>
-<%=link_to "Technology", companies_technology_path %>
-<%=link_to "Clothing", companies_clothing_path %>
-<%=link_to "Footwear", companies_footwear_path %>
-<%=link_to "Auto", companies_auto_path %>
-<%=link_to "Drugstore", companies_drugstore_path %><br><br>
+<%=link_to "Food", {:controller => "companies", :action => "category", :category => "food" }%>
+<%=link_to "Technology", {:controller => "companies", :action => "category", :category => "technology" }%>
+<%=link_to "Clothing", {:controller => "companies", :action => "category", :category => "clothing" }%>
+<%=link_to "Footwear", {:controller => "companies", :action => "category", :category => "footwear" }%>
+<%=link_to "Auto", {:controller => "companies", :action => "category", :category => "auto" }%>
+<%=link_to "Drugstore", {:controller => "companies", :action => "category", :category => "drugstore" }%><br><br>
 <!-- #link_to "Add a new company and offer", new_company_path <br><br>-->
 <%= link_to 'View all current offers', travels_path %></h3>
 
