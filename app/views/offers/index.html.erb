@@ -1,9 +1,6 @@
 
-<% if user_signed_in? %>
-  <h2> All <%=current_user.username %>'s offers on <%= Travel.find(params[:travel_id]).name %> </h2>
-  <% else %>
+
   <h2> All current offers </h2>
-  <% end %>
 
 
   <h3> <%= link_to "View offers by route or category", travels_path %> </h3>
