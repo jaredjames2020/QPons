@@ -4,12 +4,7 @@ class Company < ApplicationRecord
   has_many :travels, through: :offers
   accepts_nested_attributes_for :offers
   validates_presence_of :name, :location
-  scope :food, -> {where(category: 'Food') }
-  scope :technology, -> {where(category: 'Technology') }
-  scope :clothing, -> {where(category: 'Clothing') }
-  scope :auto, -> {where(category: 'Auto') }
-  scope :footwear, -> {where(category: 'Footwear') }
-  scope :drugstore, -> {where(category: 'Drugstore') }
 
-
+  scope :category, ->(category) {where(category: category)}
+  
 end
