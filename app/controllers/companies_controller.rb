@@ -4,68 +4,33 @@ class CompaniesController < ApplicationController
 
   def new
     get_current_travel
-    # @company = Company.new
     current_user.companies.build
-    # @company.offers.build
     @user = current_user
-    # @companies = current_user.companies
     @company = current_user.companies.new
     @travel = Travel.all
-    # @all_companies = Company.distinct.pluck(:category)
     @all_companies = Company.all
   end
 
   def index
     get_current_travel
-    # @companies = Company.all
-    # @food = Company.food
-    # @user = User.find_by(id: session[:user_id])
     @user = current_user
     @companies = current_user.companies
     @company = current_user.companies.new
     @travel = Travel.all
-    # @all_companies = Company.distinct.pluck(:category)
     @all_companies = Company.all
   end
 
   def create
-    # if user_signed_in?
     @company = current_user.companies.new(company_params)
-    # @company.offers.new.description = (params[:company][:offers_attributes]["0"][:description])
       if @company.save
-        # redirect_to travel_path(params[:travel_id])
         redirect_to companies_path
       else
         render :new
       end
   end
 
-  # def show
-  #   # @company = Company.find(params[:id])
-  # end
-
-  def auto
-    @auto = Company.auto
-  end
-
-  def clothing
-    @clothing = Company.clothing
-  end
-
-  def drugstore
-    @drugstore = Company.drugstore
-  end
-
-  def food
-    @food = Company.food
-  end
-
-  def footwear
-    @footwear = Company.footwear
-  end
-
-  def technology
-    @technology = Company.technology
+  def category
+    @deals = Company.category(params[:category].capitalize)
   end
 
   private
