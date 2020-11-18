@@ -13,8 +13,6 @@ QPons is an application that allows users to view coupons of companies along tra
 
 ## Installation
 
-### Backend
-
 - git clone git@github.com:jaredjames2020/Qpons.git
 - cd into directory
 - run bundle install to install dependencies
