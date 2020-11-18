@@ -1,3 +1,4 @@
+<div class="current-offers">
 <h2> Choose a route to see current offers </h2>
 
   <%@travels.each.with_index(1) do |travel, index|%>
@@ -6,14 +7,19 @@
 
 <h2> View offers by category </h2>
 
-<h3><%=link_to "Food", {:controller => "companies", :action => "category", :category => "food" }%>
-<%=link_to "Technology", {:controller => "companies", :action => "category", :category => "technology" }%>
-<%=link_to "Clothing", {:controller => "companies", :action => "category", :category => "clothing" }%>
-<%=link_to "Footwear", {:controller => "companies", :action => "category", :category => "footwear" }%>
-<%=link_to "Auto", {:controller => "companies", :action => "category", :category => "auto" }%>
-<%=link_to "Drugstore", {:controller => "companies", :action => "category", :category => "drugstore" }%><br><br>
-<%= link_to 'View all current offers', offers_path %></h3>
+<ul>
+<li><%=link_to "Food", {:controller => "companies", :action => "category", :category => "food" }%></li>
+<li><%=link_to "Technology", {:controller => "companies", :action => "category", :category => "technology" }%></li>
+<li><%=link_to "Clothing", {:controller => "companies", :action => "category", :category => "clothing" }%></li>
+<li><%=link_to "Footwear", {:controller => "companies", :action => "category", :category => "footwear" }%></li>
+<li><%=link_to "Auto", {:controller => "companies", :action => "category", :category => "auto" }%></li>
+<li><%=link_to "Drugstore", {:controller => "companies", :action => "category", :category => "drugstore" }%></li>
+</ul>
+
+<br><br>
+<h3><%= link_to 'View all current offers', offers_path %></h3>
 
 <% if user_signed_in? && admin %>
   <%= link_to "Add a new travel", new_travel_path %>
 <% end %>
+</div>
