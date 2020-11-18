@@ -1,9 +1,11 @@
+<div class="company-list">
 <h2> List of companies with <%=params[:category].capitalize%> offers </h2>
 
   <h3><%= link_to 'View all current offers', travels_path %></h3>
 
+  <h2>Offers</h2>
   <%@deals.each.with_index(1) do |deal, index|%>
-    <p><%=index%>
+    <p><%=index%>.</p>
       <p>Name: <%=deal.name%></p>
       <p>Location: <%=deal.location%></p>
 
@@ -11,3 +13,4 @@
         <p>Offer: <%=offer.description%></p>
         <% end %>
   <% end %>
+  </div>
