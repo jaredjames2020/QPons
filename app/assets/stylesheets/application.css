@@ -13,3 +13,183 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.home-container {
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 3px solid rgb(240, 211, 174);
+  padding: 20px;
+  width: 80%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container h3 {
+  background-color: rgb(240, 211, 174);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+}
+
+.home-button {
+  background-color: green;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  margin-bottom: 40px;
+  width: 90%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: rgb(99, 99, 99);
+}
+
+.active {
+  background-color: #4caf50;
+}
+
+.current-offers {
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 3px solid rgb(240, 211, 174);
+  padding: 20px;
+  width: 80%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-offers h3 {
+  background-color: rgb(240, 211, 174);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+}
+
+.current-offers ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  width: 45%;
+}
+
+.current-offers li {
+  float: left;
+}
+
+.current-offers li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.current-offers li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.current-offers li a.active {
+  color: white;
+  background-color: #4caf50;
+}
+
+.log-in {
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 3px solid rgb(240, 211, 174);
+  padding: 20px;
+  width: 20%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sign-up {
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 3px solid rgb(240, 211, 174);
+  padding: 20px;
+  width: 20%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.actions {
+  padding: 20px;
+}
+
+.company-list {
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 3px solid rgb(240, 211, 174);
+  padding: 20px;
+  width: 80%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-list h3 {
+  background-color: rgb(240, 211, 174);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+}
