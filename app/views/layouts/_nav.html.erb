@@ -8,9 +8,9 @@
       <% else %>
         <li><%= link_to 'Your offers', offers_path %></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method:'delete' %></li>
-        <h2><%= "Hello, #{current_user.username.capitalize}" %></h2>
-      <% end %>
-
-  </ul>
-</nav>
+        <h2 class="welcome-user"><%= "Hello #{current_user.username.capitalize}" %></h2>
+        <% end %>
+        
+        </ul>
+        </nav>
 </div>
