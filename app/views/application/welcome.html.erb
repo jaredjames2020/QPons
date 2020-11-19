@@ -1,9 +1,10 @@
+<h1 class="logo"> QPons </h1>
 <div class="home-container">
-<h1> Welcome to Offers </h1>
+<h2>Click the link below to check out the great offers!</h2>
     <% if user_signed_in? %>
 <h3><%= link_to 'View your current offers', companies_path %></h3>
 <h3><%= link_to 'Add a new offer', new_company_path %></h3>
-<h3> <!--#link to 'Add a new offer', new_travel_offer_path(@travel)--> </h3>
+
 <% end %>
 <h3><%= link_to 'View all current offers', travels_path %></h3><br>
 
