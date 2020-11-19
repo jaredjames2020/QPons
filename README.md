@@ -6,7 +6,7 @@ QPons is an application that allows users to view coupons of companies along tra
 
 ![alt text](https://media.giphy.com/media/BuWyCEWoQizBQC1ZtZ/giphy.gif)
 
-[Demo](https://vimeo.com/468783517)
+[Demo](https://vimeo.com/481319614)
 <br/>
 
 ---
