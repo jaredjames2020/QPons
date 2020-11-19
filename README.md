@@ -4,7 +4,7 @@
 
 QPons is an application that allows users to view coupons of companies along travel routes.
 
-![alt text](https://media.giphy.com/media/BuWyCEWoQizBQC1ZtZ/giphy.gif)
+![alt text](https://media.giphy.com/media/AsUjMspqMeyx6w0Gl3/giphy.gif)
 
 [Demo](https://vimeo.com/481319614)
 <br/>
