@@ -1,17 +1,19 @@
+<div class="company-list">
 <h2> List of all your companies </h2>
 
-<h3><%=link_to "All", companies_path %>
-<%=link_to "Food", {:controller => "companies", :action => "category", :category => "food" }%>
-<%=link_to "Technology", {:controller => "companies", :action => "category", :category => "technology" }%>
-<%=link_to "Clothing", {:controller => "companies", :action => "category", :category => "clothing" }%>
-<%=link_to "Footwear", {:controller => "companies", :action => "category", :category => "footwear" }%>
-<%=link_to "Auto", {:controller => "companies", :action => "category", :category => "auto" }%>
-<%=link_to "Drugstore", {:controller => "companies", :action => "category", :category => "drugstore" }%><br><br>
+<h3>
+<p><%=link_to "All", companies_path %></p>
+<p><%=link_to "Food", {:controller => "companies", :action => "category", :category => "food" }%></p>
+<p><%=link_to "Technology", {:controller => "companies", :action => "category", :category => "technology" }%></p>
+<p><%=link_to "Clothing", {:controller => "companies", :action => "category", :category => "clothing" }%></p>
+<p><%=link_to "Footwear", {:controller => "companies", :action => "category", :category => "footwear" }%></p>
+<p><%=link_to "Auto", {:controller => "companies", :action => "category", :category => "auto" }%></p>
+<p><%=link_to "Drugstore", {:controller => "companies", :action => "category", :category => "drugstore" }%></p><br><br>
 <!-- #link_to "Add a new company and offer", new_company_path <br><br>-->
 <%= link_to 'View all current offers', travels_path %></h3>
 
 <% if user_signed_in? %>
-  <%= link_to "Add a new company and offer", new_company_path %>
+  <br><br><%= link_to "Add a new company and offer", new_company_path %>
 <% end %>
 
 
@@ -24,3 +26,4 @@
     <h3><%="Offer: #{offer.description}"%></h3>
      <% end %>
 <% end %>
+</div>
